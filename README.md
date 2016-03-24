@@ -11,13 +11,15 @@ dan lugar a formas de expresar la solución a un problema.
 
 ## Operaciones de vectores
 
+A continuación las operaciones a implementar en sintaxis de python:
+
 ### Representación polar, como magnitud y ángulo a componentes
 
-a = vector(magnitud=10, angulo=0)
-
-def polar_a_componentes( v ):
-    return vector(x = v.magnitud * cos( v.angulo ),
-                  y = v.magnitud * sin( v.angulo ) )
+    a = vector(magnitud=10, angulo=0)
+    a = polar_a_componentes( a )
+    def polar_a_componentes( v ):
+        return vector(x = v.magnitud * cos( v.angulo ),
+                      y = v.magnitud * sin( v.angulo ) )
 
 
 ### Vector por un número
