@@ -11,6 +11,15 @@ dan lugar a formas de expresar la solución a un problema.
 
 ## Operaciones de vectores
 
+### Representación polar, como magnitud y ángulo a componentes
+
+a = vector(magnitud=10, angulo=0)
+
+def polar_a_componentes( v ):
+    return vector(x = v.magnitud * cos( v.angulo ),
+                  y = v.magnitud * sin( v.angulo ) )
+
+
 ### Vector por un número
 
 a = vector(x=3, y=4)
@@ -25,15 +34,9 @@ vector_suma( a, b ):
     return vector( a.x + b.x,
                    a.y + b.y )
 
-### Representación polar, como magnitud y ángulo
-
-a = vector(magnitud=10, angulo=0)
-
-x = a.magnitud * cos( a.angulo )
-y = a.magnitud * sin( a.angulo )
 
 
-### Producto escalar
+### Producto escalar, producto punto
 
 a = vector(x=3, y=4)
 b = vector(x=3, y=4)
@@ -42,9 +45,14 @@ def producto_escalar( a, b ):
     return (a.x * b.x) + (a.y * b.y)
 
 
-### Producto cruz
+### Módulo del Producto cruz
 
-pass
+a = vector(x=3, y=4)
+b = vector(x=5, y=6)
+
+def modulo_producto_cruz( a, b ):
+    return sqrt(((a.x*.y)-(a.y*b.x))**2)
+
 
 
 # Código spaghetti
