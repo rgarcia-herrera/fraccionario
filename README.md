@@ -24,36 +24,36 @@ A continuación las operaciones a implementar en sintaxis de python:
 
 ### Vector por un número
 
-a = vector(x=3, y=4)
-n = 3
-
-def vector_x_num( vector, num ):
-    return vector( vector.x * num, vector.y * num )
+    a = vector(x=3, y=4)
+    n = 3
+    
+    def vector_x_num( vector, num ):
+        return vector( vector.x * num, vector.y * num )
 
 ### Suma de Vectores
 
-vector_suma( a, b ):
-    return vector( a.x + b.x,
-                   a.y + b.y )
+    vector_suma( a, b ):
+        return vector( a.x + b.x,
+                       a.y + b.y )
 
 
 
 ### Producto escalar, producto punto
 
-a = vector(x=3, y=4)
-b = vector(x=3, y=4)
-
-def producto_escalar( a, b ):
-    return (a.x * b.x) + (a.y * b.y)
+    a = vector(x=3, y=4)
+    b = vector(x=3, y=4)
+    
+    def producto_escalar( a, b ):
+        return (a.x * b.x) + (a.y * b.y)
 
 
 ### Módulo del Producto cruz
 
-a = vector(x=3, y=4)
-b = vector(x=5, y=6)
-
-def modulo_producto_cruz( a, b ):
-    return sqrt(((a.x*.y)-(a.y*b.x))**2)
+    a = vector(x=3, y=4)
+    b = vector(x=5, y=6)
+    
+    def modulo_producto_cruz( a, b ):
+        return sqrt(((a.x*.y)-(a.y*b.x))**2)
 
 
 
