@@ -1,136 +1,139 @@
-REM ===============================================
-REM Programa que opera Vectores
-REM ===============================================
+10 REM ===============================================
+20 REM Programa que opera Vectores
+30 REM ===============================================
 40 CLS
-PRINT "Programa que opera Vectores"
-PRINT
-INPUT "vector U, componente x"; U_X
-INPUT "vector U, componente y"; U_Y
-PRINT
-INPUT "vector V, magnitud"; V_magnitud
-INPUT "vector V, ángulo"; V_angulo
-PRINT
-INPUT "escalar"; E
-PRINT
-PRINT
-PRINT
+50 PRINT "Programa que opera Vectores"
+60 PRINT
+70 INPUT "vector U, componente x"; U_X
+80 INPUT "vector U, componente y"; U_Y
+90 PRINT
+100 INPUT "vector V, magnitud"; V_magnitud
+110 INPUT "vector V, ángulo"; V_angulo
+120 PRINT
+130 INPUT "escalar"; E
+140 PRINT
+150 PRINT
+160 PRINT
 
-REM Este método es el precursor del paso de argumentos a una subrutina
-NX = U_X : NY = U_Y
-PRINT "Vector U" 
-GOSUB 520
-PRINT
 
-REM convertir de representación polar a por-componentes
-NM = V_magnitud : NA = V_angulo : GOSUB 600
-V_X = NX : V_Y = NY
-PRINT "Vector V"
-GOSUB 520
-PRINT
+170 REM Este método es el precursor del paso de argumentos a una subrutina
+180 NX = U_X : NY = U_Y
+190 PRINT "Vector U" 
+200 GOSUB 666
+210 PRINT
 
-REM vector U por escalar E
-NX = U_X : NY = U_Y : NE = E : GOSUB 450
-PRINT "Vector U por escalar E"
-GOSUB 520
-PRINT
+220 REM convertir de representación polar a por-componentes
+230 NM = V_magnitud : NA = V_angulo : GOSUB 888
+240 V_X = NX : V_Y = NY
+250 PRINT "Vector V"
+260 GOSUB 666
+270 PRINT
 
-REM vector U por escalar E
-NX = V_X : NY = V_Y : NE = E : GOSUB 450
-PRINT "Vector V por escalar E"
-GOSUB 520
-PRINT
+280 REM vector U por escalar E
+290 NX = U_X : NY = U_Y : NE = E : GOSUB 777
+300 PRINT "Vector U por escalar E"
+310 GOSUB 666
+320 PRINT
+330 REM vector U por escalar E
+340 NX = V_X : NY = V_Y : NE = E : GOSUB 777
+350 PRINT "Vector V por escalar E"
+360 GOSUB 666
+370 PRINT
 
-REM Producto Punto
-MX = U_X : MY = U_Y
-NX = V_X : NY = V_Y
-GOSUB 800
-PRINT "Producto punto U·V="; E
-PRINT
 
-REM Suma de vectores
-MX = U_X : MY = U_Y
-NX = V_X : NY = V_Y
-PRINT "Suma de vectores U+V"
-GOSUB 700
-PRINT
+380 REM Producto Punto
+390 MX = U_X : MY = U_Y
+400 NX = V_X : NY = V_Y
+410 GOSUB 1111
+420 PRINT "Producto punto U·V="; E
+430 PRINT
 
-REM Producto cruz
-MX = U_X : MY = U_Y
-NX = V_X : NY = V_Y
-GOSUB 900
-PRINT "Producto cruz UxV="; E
-PRINT
+
+440 REM Suma de vectores
+450 MX = U_X : MY = U_Y
+460 NX = V_X : NY = V_Y
+470 PRINT "Suma de vectores U+V"
+480 GOSUB 999
+490 PRINT
 
 
 
-270 INPUT "Desea continuar (S/N)"; C$
-280 IF C$ = "S" OR C$ = "s" THEN GOTO 40
-290 END
+500 REM Producto cruz
+510 MX = U_X : MY = U_Y
+520 NX = V_X : NY = V_Y
+530 GOSUB 2222
+540 PRINT "modulo de producto cruz |UxV|="; E
+550 PRINT
 
 
 
-
-450 REM =========================================
-460 REM Vector por un número
-470 REM =========================================
-vX = NX : vY = NY : nE = NE
-NX = vX * nE
-NY = vY * nE
-RETURN
+560 INPUT "Desea continuar (S/N)"; C$
+570 IF C$ = "S" OR C$ = "s" THEN GOTO 40
+580 END
 
 
 
 
-
-520 REM =========================================
-530 REM Impresion de Vectores por Componentes
-540 REM =========================================
-550 X = NX : Y = NY
-560 PRINT "("; X; "x, "; Y; "y)"
-570 RETURN
-
-
-
-
-600 REM ========================================================
-610 REM Conversión de representación polar a por-componentes 
-620 REM ========================================================
-M=NM : A = NA
-NX = M * cos( A )
-NY = M * sin( A )
-RETURN
+666 REM =========================================
+676 REM Impresion de Vectores por Componentes
+686 REM =========================================
+696 X = NX : Y = NY
+706 PRINT "("; X; "x, "; Y; "y)"
+716 RETURN
 
 
 
 
-700 REM ====================
-710 REM Suma de vectores 
-720 REM ====================
-A_X = NX : A_Y = NY
-B_X = MX : B_Y = MY
-X = A_X + B_X
-Y = A_Y + B_Y
-NX = X : NY = Y
-GOSUB 520
-RETURN
+777 REM =========================================
+787 REM Vector por un escalar
+797 REM =========================================
+807 vX = NX : vY = NY : nE = NE
+817 NX = vX * nE
+827 NY = vY * nE
+837 RETURN
 
 
 
 
-800 REM ==================
-810 REM  Producto punto 
-820 REM ==================
-A_X = NX : A_Y = NY
-B_X = MX : B_Y = MY
-E = (A_X * B_X) + (A_Y * B_Y)
-RETURN
+888 REM ========================================================
+898 REM Conversión de representación polar a por-componentes 
+908 REM ========================================================
+918 M=NM : A = NA
+928 NX = M * cos( A )
+938 NY = M * sin( A )
+948 RETURN
 
 
 
-900 REM =================
-910 REM Producto cruz 
-920 REM =================
-A_X = NX : A_Y = NY
-B_X = MX : B_Y = MY
-E = SQR( ((A_X*b_Y)-(A_Y*B_X))^2 )
-RETURN
+
+999 REM ====================
+1009 REM Suma de vectores 
+1019 REM ====================
+1029 A_X = NX : A_Y = NY
+1039 B_X = MX : B_Y = MY
+1049 X = A_X + B_X
+1059 Y = A_Y + B_Y
+1069 NX = X : NY = Y
+1079 GOSUB 666
+1089 RETURN
+
+
+
+
+1111 REM ==================
+1121 REM  Producto punto 
+1131 REM ==================
+1141 A_X = NX : A_Y = NY
+1151 B_X = MX : B_Y = MY
+1161 E = (A_X * B_X) + (A_Y * B_Y)
+1171 RETURN
+
+
+
+2222 REM =================
+2232 REM Producto cruz 
+2242 REM =================
+2252 A_X = NX : A_Y = NY
+2262 B_X = MX : B_Y = MY
+2272 E = SQR( ((A_X*b_Y)-(A_Y*B_X))^2 )
+2282 RETURN
