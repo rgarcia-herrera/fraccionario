@@ -16,8 +16,9 @@ Los datos tipo "record" se construyen a partir de los tipos nativos
 del lenguaje pero permiten al programador expresar relaciones
 nombradas y fácilmente asequibles entre datos más elementales.
 
-Este [código fuente](tipos_de_datos.pas) compila con [Free
-Pascal](http://freepascal.org), con el siguiente comando:
+Este [código fuente](https://github.com/rgarcia-herrera/vectores/blob/master/tipos_de_datos.pas)
+compila en [Free Pascal](http://freepascal.org), con el siguiente
+comando:
 
     $ fpc tipos_de_datos.pas
     Free Pascal Compiler version 2.6.4+dfsg-4 [2014/10/14] for x86_64

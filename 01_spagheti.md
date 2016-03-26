@@ -8,4 +8,6 @@ allá, regresa más arriba, etc.
 En Basic esta es la forma natural de programar, usando la expresión
 GOTO para controlar el flujo de un programa.
 
+El [código fuente](https://github.com/rgarcia-herrera/vectores/blob/master/spaghetti.bas)
+está en el repositorio original.
 

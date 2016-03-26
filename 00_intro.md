@@ -8,7 +8,7 @@ operaciones con vectores, las diferentes implementaciones permiten
 contrastar la forma en que diferentes lenguajes y usos de lenguajes
 dan lugar a formas de expresar la solución a un problema.
 
-Se provee también un [PDF](README.pdf) generado con
+Se provee también un [PDF](oo_recap.pdf) generado con
 [pandoc](http://pandoc.org) a partir de este archivo.
 
 
