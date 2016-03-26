@@ -2,6 +2,14 @@
 20 REM Programa que opera Vectores
 30 REM ===============================================
 40 CLS
+
+41 REM En aquellos días este tipo de interfaz era buena,
+42 REM quizá por lo mal shell que era command.com
+43 REM
+44 REM A continuación un bucle que pide valores para armar
+45 REM dos vectores, hace varias operaciones con ellos e
+46 REM imprime los resultados.
+
 50 PRINT "Programa que opera Vectores"
 60 PRINT
 70 INPUT "vector U, componente x"; U_X
@@ -16,7 +24,9 @@
 160 PRINT
 
 
-170 REM Este método es el precursor del paso de argumentos a una subrutina
+170 REM Esta técnica es precursora del paso de argumentos
+171 a una subrutina. NX y NY son variables transitorias que
+172 la subrutina en 666 usará de argumentos.
 180 NX = U_X : NY = U_Y
 190 PRINT "Vector U" 
 200 GOSUB 666
@@ -24,6 +34,8 @@
 
 220 REM convertir de representación polar a por-componentes
 230 NM = V_magnitud : NA = V_angulo : GOSUB 888
+231 De manera análoga la función devuelve sus valores en
+232 las variables NX y NY.
 240 V_X = NX : V_Y = NY
 250 PRINT "Vector V"
 260 GOSUB 666
@@ -55,7 +67,6 @@
 470 PRINT "Suma de vectores U+V"
 480 GOSUB 999
 490 PRINT
-
 
 
 500 REM Producto cruz
@@ -125,6 +136,7 @@
 1131 REM ==================
 1141 A_X = NX : A_Y = NY
 1151 B_X = MX : B_Y = MY
+1152 REM Esta subrutina devuelve E
 1161 E = (A_X * B_X) + (A_Y * B_Y)
 1171 RETURN
 
@@ -135,5 +147,6 @@
 2242 REM =================
 2252 A_X = NX : A_Y = NY
 2262 B_X = MX : B_Y = MY
+2263 REM Esta subrutina devuelve E
 2272 E = SQR( ((A_X*b_Y)-(A_Y*B_X))^2 )
 2282 RETURN
