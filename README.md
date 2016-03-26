@@ -237,3 +237,14 @@ GOTO para controlar el flujo de un programa.
     2272 E = SQR( ((A_X*b_Y)-(A_Y*B_X))^2 )
     2282 RETURN
     
+
+
+
+# Programación Procedural
+
+Este ejemplo está escrito en SmallBasic. Basic evolucionó: ahora ya no
+es necesario numerar las líneas de código y hay sintaxis que sirve
+para denotar subrutinas de manera explícita, con genuinos argumentos y
+nada de variables transitorias.
+
+
