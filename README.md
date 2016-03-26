@@ -360,3 +360,140 @@ nada de variables transitorias.
       PRINT "("; VECTOR(X); "x, "; VECTOR(Y); "y)"
     END SUB
     
+
+# Tipos de datos
+
+Además de subrutinas y funciones esta versión muestra el
+soporte de Pascal para tipos de datos.
+
+Para el programador mejora la legibilidad y facilita la depuración,
+para el compilador la información de tipos de datos permite optimizar
+la creación de código de máquina.
+
+Además de tipos de dato nativos, como "integer", "real" y "string",
+Pascal permite la creación de tipos de dato especializados a través
+del tipo "record".
+
+Los datos tipo "record" se construyen a partir de los tipos nativos
+del lenguaje pero permiten al programador expresar relaciones
+nombradas y fácilmente asequibles entre datos más elementales.
+
+Este [código fuente](tipos_de_datos.pas) compila con [Free
+Pascal](http://freepascal.org), con el siguiente comando:
+
+    $ fpc tipos_de_datos.pas
+    Free Pascal Compiler version 2.6.4+dfsg-4 [2014/10/14] for x86_64
+    Copyright (c) 1993-2014 by Florian Klaempfl and others
+    Target OS: Linux for x86-64
+    Compiling tipos_de_datos.pas
+    Linking tipos_de_datos
+    
+    
+    /usr/bin/ld.bfd: warning: link.res contains output sections; did you forget -T?
+    101 lines compiled, 0.1 sec 
+    $ ./tipos_de_datos
+    ...
+    
+----
+
+    program vectores_td;
+    
+    type
+      {Anteponer a los tipos una "T" es una buena costumbre.
+       Se conoce como "notación húngara"}
+      TVector = record
+        X : real;
+        Y : real;
+      end;
+    
+    var
+      U, V     : TVector;
+       x,y,m,a : real;
+      E        : real;
+    
+    
+    function VectorCrear(x, y : real): TVector;
+    var
+      temp : TVector;
+    begin
+      temp.X := x;
+      temp.Y := y;
+      VectorCrear := temp;
+    end;
+    
+    
+    {Crear un vector con magnitud y angulo}
+    function VectorCrear_MagnitudAngulo(m, a : real): TVector;
+    begin
+       VectorCrear_MagnitudAngulo := VectorCrear( m * cos( a ), m * sin( a ) );
+    end;
+    
+    
+    {Vector por un escalar}
+    function Vector_x_escalar(vector : TVector; escalar : real): TVector;
+    begin
+       Vector_x_escalar := VectorCrear( vector.X * escalar, vector.Y * escalar);
+    end;
+    
+    {Suma de Vectores}
+    function VectorSumar(a, b : TVector): TVector;
+    begin
+       VectorSumar := VectorCrear( a.X + b.X, a.Y + b.Y );
+    end;
+    
+    
+    {Producto escalar o punto}
+    function VectorProductoPunto(a, b :  TVector): real;
+    begin
+       VectorProductoPunto := (a.X * b.X) + (a.Y * b.Y);
+    end;
+    
+    {Módulo del Producto cruz}
+    function VectorModulo_ProductoCruz(a, b : TVector ): real;
+    begin
+       VectorModulo_ProductoCruz:= sqrt(sqr( (a.X * b.Y)-(a.Y*b.X)))
+    end;
+    
+    {imprimir un vector}
+    procedure VectorImprimir(V : TVector);
+    begin
+       writeln('(',V.X, 'x, ', V.Y, ')');
+    end;
+    
+    
+    
+    begin
+       write('vector U componente X= ');
+       readln(x);
+       write('vector U componente Y= ');   
+       readln(y);
+       U := VectorCrear(x,y);
+       
+       write('vector V magnitud= ');
+       readln(m);
+       write('vector V angulo= ');   
+       readln(a);
+       V:= VectorCrear_MagnitudAngulo(m, a);
+       
+       write('Escalar= ');   
+       readln(E);
+       
+       write('U= ');
+       VectorImprimir(U);
+       write('V= ');   
+       VectorImprimir(V);
+    
+       write('UxE= ');   
+       VectorImprimir(Vector_x_escalar(U, E));
+       write('VxE= ');      
+       VectorImprimir(Vector_x_escalar(V, E));
+    
+       write('U+V= ');
+       VectorImprimir(VectorSumar(U, V));
+    
+       write('U.V= ');      
+       writeln(VectorProductoPunto(U, V));
+       write('UxV= ');
+       writeln(VectorModulo_ProductoCruz( U, V));
+    
+    end.

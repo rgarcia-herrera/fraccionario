@@ -7,6 +7,12 @@ cat 02_procedural.md >> README.md
 
 awk '{print "    "$0}' procedural.bas >> README.md
 
+
+cat 03_tipos_de_datos.md >> README.md
+
+awk '{print "    "$0}' tipos_de_datos.pas >> README.md
+
+
 pandoc README.md --latex-engine=xelatex -o README.pdf
 
 # TODO:
