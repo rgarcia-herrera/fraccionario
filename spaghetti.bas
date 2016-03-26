@@ -148,5 +148,5 @@
 2252 A_X = NX : A_Y = NY
 2262 B_X = MX : B_Y = MY
 2263 REM Esta subrutina devuelve E
-2272 E = SQR( ((A_X*b_Y)-(A_Y*B_X))^2 )
+2272 E = SQR( ((A_X*B_Y)-(A_Y*B_X))^2 )
 2282 RETURN
