@@ -20,6 +20,7 @@ Este [código fuente](https://github.com/rgarcia-herrera/vectores/blob/master/ti
 compila en [Free Pascal](http://freepascal.org), con el siguiente
 comando:
 
+
     $ fpc tipos_de_datos.pas
     Free Pascal Compiler version 2.6.4+dfsg-4 [2014/10/14] for x86_64
     Copyright (c) 1993-2014 by Florian Klaempfl and others
@@ -32,6 +33,8 @@ comando:
     101 lines compiled, 0.1 sec 
     $ ./tipos_de_datos
     ...
-    
+
+
+
 ----
 

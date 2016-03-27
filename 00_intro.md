@@ -28,48 +28,53 @@ Llegada la hora de escribir el programa en Python seguramente habrá
 una clase Vector, tendrá un constructor polimórfico que reciba como
 argumentos componentes x, y o una magnitud y un ángulo.
 
+```python
     v = vector(magnitud=10, angulo=0)
     u = polar_a_componentes( v )
     
     def polar_a_componentes( v ):
         return vector(x = v.magnitud * cos( v.angulo ),
                       y = v.magnitud * sin( v.angulo ) )
-
+```
 
 ### Vector por un número
 
 Acá se muestra el constructor por componentes.
 
+```python
     a = vector(x=3, y=4)
     n = 3
     
     def vector_x_num( vector, num ):
         return vector( vector.x * num, vector.y * num )
-
+```
 
 ### Suma de Vectores
 
+```python
     vector_suma( a, b ):
         return vector( a.x + b.x,
                        a.y + b.y )
-
+```
 
 
 ### Producto escalar, producto punto
 
+```python
     a = vector(x=3, y=4)
     b = vector(x=3, y=4)
     
     def producto_escalar( a, b ):
         return (a.x * b.x) + (a.y * b.y)
-
+```
 
 ### Módulo del Producto cruz
 
+```python
     a = vector(x=3, y=4)
     b = vector(x=5, y=6)
     
     def modulo_producto_cruz( a, b ):
         return sqrt(((a.x*.y)-(a.y*b.x))**2)
-
+```
 
