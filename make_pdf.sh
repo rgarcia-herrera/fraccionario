@@ -18,6 +18,20 @@ echo '```' >> oo_recap.md
 cat 03_tipos_de_datos.md >> README.md
 cat 03_tipos_de_datos.md >> oo_recap.md
 
+
+cat 03.1_tipos_de_datos_en_C.md >> README.md
+cat 03.1_tipos_de_datos_en_C.md >> oo_recap.md
+
+
+echo '```C' >> oo_recap.md
+echo >>  oo_recap.md
+cat tipos_de_datos.c >> oo_recap.md
+echo '```' >> oo_recap.md
+
+
+cat 03.2_tipos_de_datos_pascal.md >> README.md
+cat 03.2_tipos_de_datos_pascal.md >> oo_recap.md
+
 echo '```pascal' >> oo_recap.md
 echo >>  oo_recap.md
 cat tipos_de_datos.pas >> oo_recap.md
