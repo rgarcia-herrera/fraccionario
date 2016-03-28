@@ -106,20 +106,29 @@ está en el repositorio original.
 
 # Tipos de datos
 
-Además de subrutinas y funciones esta versión muestra el
-soporte de Pascal para tipos de datos.
+Algunos lenguajes soportan la especificación de los tipos de datos a
+usarse.
 
 Para el programador mejora la legibilidad y facilita la depuración,
 para el compilador la información de tipos de datos permite optimizar
 la creación de código de máquina.
 
-Además de tipos de dato nativos, como "integer", "real" y "string",
-Pascal permite la creación de tipos de dato especializados a través
-del tipo "record".
+Además de tipos de dato nativos, como "integer", "real" o "string",
+Algunos lenguajes permiten la creación de tipos de dato definidos por
+el usuario. Se construyen a partir de los tipos nativos del lenguaje
+pero permiten al programador expresar relaciones nombradas y
+fácilmente asequibles entre datos más elementales.
 
-Los datos tipo "record" se construyen a partir de los tipos nativos
-del lenguaje pero permiten al programador expresar relaciones
-nombradas y fácilmente asequibles entre datos más elementales.
+
+## Versión en C
+
+Esta versión en C muestra el uso de tipos de datos a través del uso de
+"struct".
+
+## Versión en Pascal
+
+Pascal tiene soporte para tipos de datos definidos por el usuario a
+través del tipo "record".
 
 Este [código fuente](https://github.com/rgarcia-herrera/vectores/blob/master/tipos_de_datos.pas)
 compila en [Free Pascal](http://freepascal.org), con el siguiente
@@ -127,18 +136,6 @@ comando:
 
 
     $ fpc tipos_de_datos.pas
-    Free Pascal Compiler version 2.6.4+dfsg-4 [2014/10/14] for x86_64
-    Copyright (c) 1993-2014 by Florian Klaempfl and others
-    Target OS: Linux for x86-64
-    Compiling tipos_de_datos.pas
-    Linking tipos_de_datos
-    
-    
-    /usr/bin/ld.bfd: warning: link.res contains output sections; did you forget -T?
-    101 lines compiled, 0.1 sec 
-    $ ./tipos_de_datos
-    ...
-
 
 
 ----
