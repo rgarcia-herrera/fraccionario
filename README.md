@@ -125,6 +125,16 @@ fácilmente asequibles entre datos más elementales.
 Esta versión en C muestra el uso de tipos de datos a través del uso de
 "struct".
 
+[Acá](https://github.com/rgarcia-herrera/vectores/blob/master/tipos_de_datos.c)
+el código fuente.
+
+Se compila con gcc así:
+
+    $ gcc -lm tipos_de_datos.c
+
+----
+
+
 ## Versión en Pascal
 
 Pascal tiene soporte para tipos de datos definidos por el usuario a
