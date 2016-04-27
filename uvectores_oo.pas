@@ -14,21 +14,21 @@ type
 
 public
    
-constructor Crear(a,b: real);
-   {constructor Crear_MagnitudAngulo(m, a : real);}
-   
-        function x_escalar( escalar : real): TVector;
-        function Suma(b : TVector): TVector;
-        function ProductoPunto( b :  TVector): real;
-        function Modulo_ProductoCruz( b : TVector ): real;
-        function ComoCadena: string;
-        destructor Free;
+  constructor Crear(a,b: real);
+  constructor Crear_MagnitudAngulo(m, a : real);
+  function x_escalar( escalar : real): TVector;
+  function Suma(b : TVector): TVector;
+  function ProductoPunto( b :  TVector): real;
+  function Modulo_ProductoCruz( b : TVector ): real;
+  function ComoCadena: string;
+  destructor Free;
 end;
 
 
                                                       
 implementation	
 
+{Crear un vector con sus componentes x y y}        
 constructor TVector.Crear(a,b : real);
 begin
    inherited Create;
@@ -36,17 +36,21 @@ begin
    self.Y := b;
 end;
 
+
+{Crear un vector con magnitud y angulo}
+constructor TVector.Crear_MagnitudAngulo(m, a : real);
+begin
+   self.X := m * cos( a );
+   self.Y := m * sin( a );
+end;
+
+        
 destructor TVector.Free;
 begin
    inherited Destroy;
 end;
 
 
-{Crear un vector con magnitud y angulo}
-        { function TVector.Crear_MagnitudAngulo(m, a : real): TVector; }
-{ begin }
-{    VectorCrear_MagnitudAngulo := VectorCrear( m * cos( a ), m * sin( a ) ); }
-{ end; }
 
 
 {Vector por un escalar}
