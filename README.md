@@ -205,3 +205,24 @@ otra creando un prototipo al declarar la clase y detallándolo
 posteriormente, como en el caso del método
 [ProductoPunto](https://github.com/rgarcia-herrera/vectores/blob/master/vectores_oo.h#L65).
 
+
+## Implementación en Python
+
+Python es un lenguaje de programación con excelente soporte para
+programación orientada objetos: la implementación es notoriamente
+breve y clara.
+
+Nótese cómo el método \_\_repr\_\_ de las clases que heredan de "object"
+es una forma integral al lenguaje del ComoCadena que hemos visto en
+otras implementaciones.
+
+Además la capacidad de declarar argumentos nombrados y valores default
+en la definición de una función hacen innecesario el polimorfismo de
+constructores.
+
+En Python basta con que dos archivos con extensión ".py" estén en el
+mismo directorio para que uno pueda incluir de otro.
+
+El archivo [vectores_oo.py](https://github.com/rgarcia-herrera/vectores/blob/master/vectores_oo.py) hace de biblioteca y en él se
+declara la clase que se usa en [vectores.py](https://github.com/rgarcia-herrera/vectores/blob/master/vectores.py).
+
