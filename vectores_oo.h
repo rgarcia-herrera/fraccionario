@@ -6,18 +6,17 @@ class TVector {
   float Y;
   
  public:
+  
   TVector() {
     X = 0;
     Y = 0;
   }
+  
   TVector(float x, float y) {
     X = x;
     Y = y;
   }
-  
-  //  ~TVector();
-
-  
+    
   TVector MagnitudAngulo( float m, float a) {
     X = m * cos(a);
     Y = m * sin(a);
@@ -38,22 +37,14 @@ class TVector {
 
   // Módulo del Producto cruz
   float Modulo_ProductoCruz(TVector);
- 
+
+  // representacion imprimible
   char* ComoCadena() {
     printf("(%2.2fx, %2.2fy)\n", X, Y);
   }
   
 
 };
-
-
-
-
-/* TVector VectorCrear_MagnitudAngulo( float m, float a) { */
-/*   return VectorCrear( m * cos(a), m * sin(a) ); */
-/* } */
-
-
 
 // Suma de Vectores
 TVector TVector::Sumar(TVector b) {

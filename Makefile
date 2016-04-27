@@ -10,6 +10,7 @@ readme:
 	    03.2_tipos_de_datos_pascal.md \
 	    04_oo.md \
 	    04.1_oo_pascal.md \
+	    04.2_oo_cpp.md \
 	> README.md
 
 
@@ -55,6 +56,18 @@ pdf:
 	echo '```pascal' >> oo_recap.md
 	echo >>  oo_recap.md
 	cat vectores_oo.pas >> oo_recap.md
+	echo '```' >> oo_recap.md
+
+	cat 04.2_oo_cpp.md >> oo_recap.md
+
+	echo '```cpp' >> oo_recap.md
+	echo >>  oo_recap.md
+	cat vectores_oo.h >> oo_recap.md
+	echo '```' >> oo_recap.md
+
+	echo '```cpp' >> oo_recap.md
+	echo >>  oo_recap.md
+	cat vectores_oo.cpp >> oo_recap.md
 	echo '```' >> oo_recap.md
 
 

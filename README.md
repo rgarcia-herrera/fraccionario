@@ -185,3 +185,23 @@ comando:
     $ fpc -Mobjfpc vectores_oo.pas
 
 
+## Implementación en C++
+
+El lenguaje C++ agrega programación orientada a objetos al lenguaje C.
+
+En esta versión también se muestra el uso de un archivo de encabezado
+(.h) que es una forma de crear bibliotecas cuya funcionalidad puede
+incluirse en otros programas.
+
+El archivo
+[vectores_oo.h](https://github.com/rgarcia-herrera/vectores/blob/master/vectores_oo.h)
+declara la clase que se instancía en
+[vectores_oo.cpp](https://github.com/rgarcia-herrera/vectores/blob/master/vectores_oo.cpp).
+
+Se muestran dos formas de crear una función miembro, también conocida
+como método: una al declarar la clase, cual es el caso del método
+[x_escalar](https://github.com/rgarcia-herrera/vectores/blob/master/vectores_oo.h#L28),
+otra creando un prototipo al declarar la clase y detallándolo
+posteriormente, como en el caso del método
+[ProductoPunto](https://github.com/rgarcia-herrera/vectores/blob/master/vectores_oo.h#L65).
+
