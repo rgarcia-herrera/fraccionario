@@ -11,6 +11,7 @@ readme:
 	    04_oo.md \
 	    04.1_oo_pascal.md \
 	    04.2_oo_cpp.md \
+	    04.3_oo_python.md \
 	> README.md
 
 
@@ -69,6 +70,19 @@ pdf:
 	echo >>  oo_recap.md
 	cat vectores_oo.cpp >> oo_recap.md
 	echo '```' >> oo_recap.md
+
+	cat 04.3_oo_python.md >> oo_recap.md
+
+	echo '```python' >> oo_recap.md
+	echo >>  oo_recap.md
+	cat vectores_oo.py >> oo_recap.md
+	echo '```' >> oo_recap.md
+
+	echo '```python' >> oo_recap.md
+	echo >>  oo_recap.md
+	cat vectores.py >> oo_recap.md
+	echo '```' >> oo_recap.md
+
 
 
 	pandoc oo_recap.md --latex-engine=xelatex --toc \
