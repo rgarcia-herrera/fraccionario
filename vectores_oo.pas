@@ -16,7 +16,7 @@ begin
    readln(y);
    U := TVector.Crear(x,y);
 
-   write('vector V componente X= ');
+   write('vector V componente X = ');
    readln(x);
    write('vector V componente Y= ');   
    readln(y);
@@ -35,13 +35,13 @@ begin
    writeln('V= ', V.ComoCadena);
 
 
-   writeln('UxE= ', TVector.x_escalar(U, E).ComoCadena);
-   writeln('VxE= ', TVector.x_escalar(V, E).ComoCadena);
+   writeln('UxE= ', U.x_escalar(E).ComoCadena);
+   writeln('VxE= ', V.x_escalar(E).ComoCadena);
 
-   writeln('U+V= ', TVector.Suma(U, V).ComoCadena);
+   writeln('U+V= ', U.Suma(V).ComoCadena);
 
-   writeln('U.V= ', TVector.ProductoPunto(U, V);
-   writeln('UxV= ', TVector.Modulo_ProductoCruz( U, V));
+   writeln('U.V= ', U.ProductoPunto(V));
+   writeln('UxV= ', U.Modulo_ProductoCruz(V));
 
   {Por disciplina, antes de terminar "destruimos" los objetos}
   { F1.Free; }

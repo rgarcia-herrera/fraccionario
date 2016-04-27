@@ -7,34 +7,33 @@ uses
 sysutils;
 
 type
-    TVector = class
+   TVector = class
+   private
+   X : real;
+   Y : real;
+
+public
    
-    private
-       X : real;
-       Y : real;
-   
-    public
-   
-        constructor Crear(x, y : real);
+constructor Crear(a,b: real);
    {constructor Crear_MagnitudAngulo(m, a : real);}
    
-        function Vector_x_escalar(vector : TVector; escalar : real): TVector;
-        function VectorSuma(a, b : TVector): TVector;
-        function VectorProductoPunto(a, b :  TVector): real;
-        function VectorModulo_ProductoCruz(a, b : TVector ): real;
-
+        function x_escalar( escalar : real): TVector;
+        function Suma(b : TVector): TVector;
+        function ProductoPunto( b :  TVector): real;
+        function Modulo_ProductoCruz( b : TVector ): real;
+        function ComoCadena: string;
         destructor Free;
-    end;
+end;
 
 
                                                       
 implementation	
 
-constructor TVector.Crear(X, Y : real);
+constructor TVector.Crear(a,b : real);
 begin
    inherited Create;
-   self.X := X;
-   self.Y := Y;
+   self.X := a;
+   self.Y := b;
 end;
 
 destructor TVector.Free;
@@ -78,7 +77,7 @@ end;
 {autorrepresentacion imprimible}
 function TVector.ComoCadena: string;
 begin
-   Result := '(' + self.X + 'x, ' + self.Y + ')';
+   Result := '('+ FloatToStr(self.X) + 'x, ' + FloatToStr(self.Y) + 'y)';
 end;
 
 end.
