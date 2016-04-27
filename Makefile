@@ -8,7 +8,8 @@ readme:
 	    03_tipos_de_datos.md \
 	    03.1_tipos_de_datos_en_C.md \
 	    03.2_tipos_de_datos_pascal.md \
-	    04_oo_pascal.md \
+	    04_oo.md \
+	    04.1_oo_pascal.md \
 	> README.md
 
 
@@ -44,7 +45,7 @@ pdf:
 	cat tipos_de_datos.pas >> oo_recap.md
 	echo '```' >> oo_recap.md
 
-	cat 04_oo_pascal.md >> oo_recap.md
+	cat 04_oo.md 04.1_oo_pascal.md >> oo_recap.md
 
 	echo '```pascal' >> oo_recap.md
 	echo >>  oo_recap.md
